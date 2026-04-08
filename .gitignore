@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment — NEVER commit this
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

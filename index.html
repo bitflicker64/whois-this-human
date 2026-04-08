@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who Is This Human?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Who Is This Human?</h1>
+    <p class="sub">Enter a GitHub username → get your coding persona + a song</p>
+
+    <div class="input-row">
+      <input type="text" id="github-input" placeholder="GitHub username..." />
+      <button id="generate-btn">Generate</button>
+    </div>
+    <div id="error-msg" class="error-msg"></div>
+
+    <div id="loading" class="hidden">Analyzing...</div>
+
+    <div id="result" class="result hidden">
+      <img id="avatar" class="avatar" src="" alt="avatar" />
+      <h2 id="username"></h2>
+      <p class="label">Top Language</p>
+      <p id="top-lang" class="value"></p>
+      <p class="label">Repos / Stars</p>
+      <p id="stats" class="value"></p>
+      <p class="label">Your Persona</p>
+      <p id="persona" class="persona"></p>
+      <p id="persona-desc" class="desc"></p>
+      <p class="label">Your Song</p>
+      <p id="song" class="song"></p>
+      <button id="play-btn" class="play-btn">▶ Play on Spotify</button>
+      <button id="reset-btn" class="reset-btn">Try another</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

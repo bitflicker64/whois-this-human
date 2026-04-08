@@ -1,0 +1,26 @@
+{
+  "name": "whois-this-human",
+  "version": "1.0.0",
+  "description": "A web app that pulls data from multiple public APIs to build a unified “internet persona” dashboard. Enter a username, get the story.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitflicker64/whois-this-human.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bitflicker64/whois-this-human/issues"
+  },
+  "homepage": "https://github.com/bitflicker64/whois-this-human#readme",
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1"
+  }
+}
