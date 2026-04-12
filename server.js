@@ -131,13 +131,22 @@ app.get('/api/repos/:username', async (req, res) => {
 
 app.use(express.static(path.join(__dirname)));
 
+// Explicit root handler helps in serverless deployments.
+app.get('/', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // ─── START ───────────────────────────────────────────────────────────────────
 
-app.listen(PORT, () => {
-  const token = process.env.GITHUB_TOKEN;
-  const tokenStatus = (token && token !== PLACEHOLDER_TOKEN)
-    ? '✓ GitHub token loaded'
-    : '⚠  No GITHUB_TOKEN — using unauthenticated API (60 req/hr limit)';
-  console.log(`\n  🎵  Server running at http://localhost:${PORT}`);
-  console.log(`  ${tokenStatus}\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    const token = process.env.GITHUB_TOKEN;
+    const tokenStatus = (token && token !== PLACEHOLDER_TOKEN)
+      ? '✓ GitHub token loaded'
+      : '⚠  No GITHUB_TOKEN — using unauthenticated API (60 req/hr limit)';
+    console.log(`\n  🎵  Server running at http://localhost:${PORT}`);
+    console.log(`  ${tokenStatus}\n`);
+  });
+}
+
+module.exports = app;
